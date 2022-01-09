@@ -9,8 +9,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@main
-    - uses: StevenSumedi/cloud_resume_aws@main
+    - uses: actions/checkout@master
+    - uses: StevenSumedi/cloud_resume_aws@master
       with:
         args: --acl public-read --follow-symlinks --delete --exclude '.git*/*'
       env:
