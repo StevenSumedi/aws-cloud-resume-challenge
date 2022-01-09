@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: StevenSumedi/cloud_resume_aws@master
+    - uses: StevenSumedi/cloud_resume_aws@main
       with:
         args: --acl public-read --follow-symlinks --delete --exclude '.git*/*'
       env:
