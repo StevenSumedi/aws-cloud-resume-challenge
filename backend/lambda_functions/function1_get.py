@@ -10,3 +10,5 @@ def lambda_handler(event, context):
         'record_id': '0'
     })
     return response['Item']['record_count']
+
+#
