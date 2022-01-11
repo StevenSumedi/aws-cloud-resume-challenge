@@ -5,7 +5,7 @@ phases:
       python: 3.8
   build:
     commands:
-      - zip -g deployment_package.zip function1_get.py
+      - zip -g deployment_package.zip backend/lambda_functions/function1_get.py
   post_build:
     commands:
     - echo "Updating lambda Function..."
