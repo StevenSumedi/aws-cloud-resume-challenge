@@ -5,8 +5,7 @@ phases:
       python: 3.9
   build:
     commands:
-      - zip -g deployment_package.zip function1_get.py
-      - zip -g deployment_package.zip function2_post.py
+      - zip -g deployment_package.zip function1_get.py function2_post.py
   post_build:
     commands:
     - echo "Updating lambda Function..."
