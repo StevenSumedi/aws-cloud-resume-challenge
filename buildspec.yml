@@ -2,7 +2,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.8
+      python: 3.9
   build:
     commands:
       - zip -g deployment_package.zip function1_get.py
@@ -11,5 +11,14 @@ phases:
     commands:
     - echo "Updating lambda Function..."
     - aws lambda update-function-code --function-name function1_fetch --zip-file fileb://deployment_package.zip
+    - aws lambda update-function-code --function-name function2_update --zip-file fileb://deployment_package2.zip
+    - echo "Done!"
+
+  build:
+    commands:
+      - zip -g deployment_package2.zip function2_post.py
+  post_build:
+    commands:
+    - echo "Updating lambda Function..."
     - aws lambda update-function-code --function-name function2_update --zip-file fileb://deployment_package2.zip
     - echo "Done!"
