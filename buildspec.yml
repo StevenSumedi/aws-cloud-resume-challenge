@@ -2,7 +2,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.9
+      python: 3.8
   build:
     commands:
       - echo "Zipping deployment package..."
@@ -10,7 +10,7 @@ phases:
       - cd lib
       - zip -r9 ../deployment_package.zip .
       - cd ..
-      - zip -g deployment_package.zip ../backend/lambda_functions/function1_get.py
+      - zip -g deployment_package.zip backend/lambda_functions/function1_get.py
   post_build:
     commands:
     - echo "Updating lambda Function..."
